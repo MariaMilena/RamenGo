@@ -1,0 +1,110 @@
+body {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+main {
+    padding: 100px;
+}
+
+#title-global-broths {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#title-global {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+#title-descricao {
+    font-size: 15px;
+}
+
+#broths, #proteins {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  
+.card {
+    width: 320px; /* Ajuste a largura conforme necessário */
+    height: 316px;
+    margin-bottom: 20px; /* Adiciona espaçamento entre os cards */
+    text-align: center;
+    padding: 15px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.card img {
+    width: 104px; /* Garante que a imagem preencha todo o espaço disponível */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.title-card {
+    color: #1820EF;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.description-card {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.price-card {
+    color: #FF4E42;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.rounded-button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    color: white; /* Cor do texto */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+  
+.rounded-button span {
+    margin-left: 10px; /* Espaçamento entre o texto e a seta */
+}
+
+#button-pedido {
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo ao centro horizontalmente */
+    align-items: center; /* Alinha o conteúdo ao centro verticalmente */
+    margin-top: 50px;
+}
+
+button:disabled {
+    background-color: #C5C5C5;
+    cursor: not-allowed;
+}
+
+button:enabled {
+    background-color: #1820EF;
+}
+
+.card.active {
+    background-color: #1820EF; /* Cor de fundo quando o card está ativo */
+}
+
+.card.active p.title-card, .card.active .description-card {
+    color: white; /* Define a cor do título e do preço quando o card está ativo */
+}
+
+.card.active p.price-card {
+    color: #FFC024;
+}
+
