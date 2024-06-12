@@ -4,6 +4,85 @@ body {
     padding: 0;
 }
 
+.banner {
+    position: relative;
+    max-width: 100%; /* Garante que a imagem do banner não ultrapasse a largura do cabeçalho */
+}
+  
+.banner img {
+    width: 100%; /* Garante que a imagem do banner preencha todo o espaço disponível */
+    max-height: 768px; /* Define uma altura máxima para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para a elipse */
+.ellipse {
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 86px; /* Distância do topo */
+    left: 460px; /* Distância da esquerda */
+    width: 587px; /* Largura da elipse */
+    height: 587px; /* Altura da elipse */
+    background-color: #730000; /* Cor da elipse */
+    border-radius: 50%; /* Transforma a div em uma elipse */
+    z-index: 1; /* Garante que a elipse fique sobre a imagem */
+}
+
+.overlay-image {
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 38px; /* Distância do topo */
+    left: 429px; /* Distância da esquerda */
+    max-width: 666px; /* Largura da imagem sobreposta */
+    z-index: 2; /* Garante que a imagem sobreposta fique sobre a elipse */
+}
+
+.balao-image-amarelo {
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 295px; /* Distância do topo */
+    left: 992px; /* Distância da esquerda */
+    max-width: 106px; /* Largura da imagem sobreposta */
+    z-index: 2; /* Garante que a imagem sobreposta fique sobre a elipse */
+}
+
+.balao-image-azul {
+    position: absolute; /* Posicionamento absoluto em relação ao cabeçalho */
+    top: 47px; /* Distância do topo */
+    left: 425px; /* Distância da esquerda */
+    max-width: 116px; /* Largura da imagem sobreposta */
+    z-index: 2; /* Garante que a imagem sobreposta fique sobre a elipse */
+}
+
+#title-banner {
+    position: absolute;
+    top: 50px;
+    left: 320px;
+    font-weight: 900;
+    font-size: 160px;
+    color: white;
+    z-index: 2;
+}
+
+#descricao-banner {
+    position: absolute;
+    top: 404px;
+    left: 273px;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    width: 201px;
+    z-index: 2;
+}
+
+#japones-banner {
+    position: absolute;
+    top: 50px;
+    left: 264px;
+    font-weight: 900;
+    font-size: 48px;
+    color: #FFC024;
+    width: 10px;
+    z-index: 2;
+}
+
 main {
     padding: 100px;
 }
