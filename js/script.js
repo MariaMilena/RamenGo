@@ -1,4 +1,6 @@
 const apiKey = "ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf";
+let selectedBrothId = null;
+let selectedProteinId = null;
 
 async function fetchData(url) {
   try {
@@ -56,6 +58,12 @@ function createCard(data, container) {
       activeImage.src = activeImage.dataset.original; 
     }
     card.classList.toggle('active');
+    const isBroth = container.classList.contains('broths');
+    if (isBroth) {
+      selectedBrothId = data.id;
+    } else {
+      selectedProteinId = data.id;
+    }
     const cardImage = card.querySelector('img');
     if (card.classList.contains('active')) {
       cardImage.src = cardImage.dataset.active; // Define a imagem ativa
@@ -112,9 +120,27 @@ function updateButtonState() {
 }
 
 // Event listener para o botão de pedido
-document.getElementById('orderButton').addEventListener('click', () => {
-  if (!document.getElementById('orderButton').disabled) {
+document.getElementById('orderButton').addEventListener('click', async () => {
+  const orderData = {
+    brothId: selectedBrothId,
+    proteinId: selectedProteinId
+  };
+
+  const response = await fetch('https://api.tech.redventures.com.br/orders', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf'
+    },
+    body: JSON.stringify(orderData)
+  });
+
+  if (response.ok) {
+    const responseData = await response.json();
+    localStorage.setItem('orderResponse', JSON.stringify(responseData));
     window.location.href = 'order.html'; // Redireciona para a nova página
+  } else {
+    alert('Failed to place order');
   }
 });
 
